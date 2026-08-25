@@ -1,6 +1,7 @@
 import Badge from "./badge";
 import { Link } from "react-router-dom";
 import { useKeranjang } from "../context/KeranjangContext";
+import { memo } from "react";
 
 function ProdukCard({ produk }) {
     const { tambahKeKeranjang } = useKeranjang();
@@ -37,4 +38,4 @@ function ProdukCard({ produk }) {
     );
 }
 
-export default ProdukCard;
+export default memo(ProdukCard);
