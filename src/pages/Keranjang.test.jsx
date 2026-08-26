@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { KeranjangProvider, useKeranjang } from "./KeranjangContext";
+import { KeranjangProvider, useKeranjang } from "../context/KeranjangContext";
 
 describe("KeranjangContext", () => {
   it("menambahkan produk ke keranjang", () => {
