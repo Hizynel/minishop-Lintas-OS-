@@ -1,16 +1,117 @@
-# React + Vite
+# MiniShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi e-commerce sederhana berbasis react untuk menampilkan produk, melihat detail produk, dan mengelola keranjang belanja.
 
-Currently, two official plugins are available:
+## Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Home** — Menampilkan daftar produk
+* **Search** — Mencari produk berdasarkan nama
+* **Filter Kategori** — Memfilter produk berdasarkan kategori
+* **Detail Produk** — Melihat informasi lengkap produk
+* **Keranjang** — Menambahkan dan menghapus produk dari keranjang
+* **Quantity** — Mengatur jumlah produk di keranjang
+* **Perhitungan Total** — Menghitung subtotal dan total harga secara otomatis
+* **Authentication** — Login dan register pengguna
+* **Protected Route** — Membatasi halaman tertentu untuk pengguna yang sudah login
+* **Local Storage** — Menyimpan data keranjang di browser
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Instalasi
 
-## Expanding the ESLint configuration
+### 1. Clone Repository
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/Gatoott/minishop.git
+```
+
+Masuk ke folder project:
+
+```bash
+cd minishop
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Jalankan Development Server
+
+```bash
+npm run dev
+```
+
+Setelah itu buka URL yang diberikan Vite, biasanya:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Build untuk Production
+
+Untuk membuat production build:
+
+```bash
+npm run build
+```
+
+---
+
+## Menjalankan Testing
+
+Menjalankan test:
+
+```bash
+npm run test
+```
+
+---
+
+### Penjelasan Folder
+
+| Folder/File             | Keterangan                                   |
+| ----------------------- | -------------------------------------------- |
+| `src/assets/components` | Component yang digunakan di beberapa halaman |
+| `src/assets/pages`      | Halaman utama aplikasi                       |
+| `src/context`           | Global state menggunakan React Context       |
+| `src/hooks`             | Custom React hooks                           |
+| `src/App.jsx`           | Konfigurasi routing aplikasi                 |
+| `src/main.jsx`          | Entry point React                            |
+| `public`                | Asset statis                                 |
+| `screenshots`           | Screenshot untuk dokumentasi                 |
+| `package.json`          | Dependency dan script project                |
+| `vite.config.js`        | Konfigurasi Vite                             |
+
+---
+
+## API
+
+Project ini menggunakan **Fake Store API** sebagai sumber data produk.
+
+Endpoint yang digunakan:
+
+```text
+GET https://fakestoreapi.com/products
+```
+
+Untuk mendapatkan detail produk:
+
+```text
+GET https://fakestoreapi.com/products/:id
+```
+
+---
+
+## Routing
+
+| Route         | Halaman       |
+| ------------- | ------------- |
+| `/`           | Home          |
+| `/produk/:id` | Detail Produk |
+| `/login`      | Login         |  
+| `/register`   | Register      | 
+| `/keranjang`  | Keranjang     |
